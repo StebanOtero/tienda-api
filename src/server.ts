@@ -1,8 +1,10 @@
 import express from "express";
 import { pool } from "./db";
+import productosRouter from "./routes/productos.routes";
 
 const app = express();
 app.use(express.json());
+app.use("/productos", productosRouter);
 
 app.get("/salud", async (_req, res) => {
   try {
